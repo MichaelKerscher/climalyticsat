@@ -1,0 +1,59 @@
+\documentclass[sigconf]{acmart}
+
+\title{Climalytics AT}
+
+\author{David Kalteis}
+\email{s2410455001@fhooe.at}
+\affiliation{\institution{FH Hagenberg}\department{Mobile Computing}\country{Austria}}
+
+\author{Dominik Forsthuber}
+\email{s2410455011@fhooe.at}
+\affiliation{\institution{FH Hagenberg}\department{Mobile Computing}\country{Austria}}
+
+\author{Michael Kerscher}
+\email{s2410455014@fhooe.at}
+\affiliation{\institution{FH Hagenberg}\department{Mobile Computing}\country{Austria}}
+
+\begin{document}
+
+\begin{abstract}
+Your abstract here.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+Our project focuses on analyzing long-term weather trends and extreme climate patterns in Austria using scalable Big Data technologies. We aim to uncover patterns in temperature, precipitation, and extreme events across regions and over time.
+
+\section{Dataset}
+This dataset contains monthly aggregated climate data from various weather stations across Austria. Each entry includes numerous meteorological measurements (e.g., temperature extremes, precipitation, humidity, sunshine duration, frost days, wind data) over many years, making it suitable for large-scale time series and spatial weather analysis.
+Time span: January 1970 – April 2025 (monthly resolution) \linebreak
+The dataset used in this study was downloaded from GeoSphere Austria's climate data portal~\cite{geosphere_klima_v2_1m}.\\
+
+\textbf{Downloaded datafiles:} 
+\begin{itemize}
+    \item \verb|climate_all_stations.csv    676 MB |
+    \item \verb|parameter_metadata.csv       58 KB |
+    \item \verb|stations_metadata.csv       168 KB |
+\end{itemize}
+
+\section{Research questions}
+\subsection{How does the long-term trend in mean monthly temperature vary with elevation?}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.4\linewidth]{img/placeholder.png}
+  \caption{Placeholder figure.}
+  \label{fig:placeholder}
+\end{figure}
+
+
+\subsection{Which geographic zones (valleys, plateaus, alpine corridors) show the largest shifts in “hot days” (<= 30 C) and “frost days” (>= 0 C) since 1970?}
+\subsection{How do station installation dates and validity periods create spatio-temporal gaps, and where are the largest “data deserts”?}
+\subsection{Which seasonal windows and locations optimize safety—combining sunshine hours, wind-gust flags, and frost/heat indicators?}
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{software}
+
+\end{document}
+
