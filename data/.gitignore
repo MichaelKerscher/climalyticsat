@@ -1,3 +1,5 @@
 climate_all_stations.csv
 parameter_metadata.csv
 stations_metadata.csv
+
+parquet/
