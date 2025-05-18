@@ -3,3 +3,4 @@ parameter_metadata.csv
 stations_metadata.csv
 
 parquet/
+extremes_parquet/
