@@ -1554,8 +1554,7 @@
   \fi
 }
 \if@ACM@journal\else
-\acmConference[Conference'17]{ACM Conference}{July 2017}{Washington,
-  DC, USA}%
+\acmConference[Big Data]{ACM Conference}{2025}{FH Hagenberg}%
 \fi
 \def\acmBooktitle#1{\gdef\@acmBooktitle{#1}}
 \acmBooktitle{}
@@ -2007,7 +2006,7 @@
   \or % cc
   Copyright held by the owner/author(s).
   \fi}
-\def\@formatdoi#1{\url{https://doi.org/#1}}
+\def\@formatdoi#1{}
 \def\@copyrightpermission{%
   \ifcase\acm@copyrightmode\relax % none
   \or % acmcopyright
