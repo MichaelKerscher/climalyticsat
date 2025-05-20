@@ -1,0 +1,18 @@
+Our data processing and analysis pipeline is built upon a suite of robust big-data and visualization technologies. Each component plays a specific role in efficiently ingesting, transforming, querying, and visualizing the weather station data.
+
+\begin{itemize}
+  \item \textbf{Apache Spark}
+    We use Spark as the core distributed‐compute engine for all large-scale data operations. Its resilient distributed datasets (RDDs) and DataFrame APIs enable parallel processing across our Docker-hosted Spark cluster, allowing us to scale computations over the full 800 MB weather dataset with fault tolerance and in-memory acceleration.
+
+  \item \textbf{PySpark}
+    PySpark serves as the Python interface to Spark, offering the flexibility of Python for data wrangling and the performance of Spark’s JVM runtime. All transformation logic—such as filtering by station, aggregating daily summaries, and computing derived meteorological metrics—is implemented using PySpark DataFrame operations.
+
+  \item \textbf{Apache Parquet}
+    To optimize on-disk storage and I/O throughput, we convert the original CSV files into the columnar Parquet format. Parquet’s efficient compression and column pruning dramatically reduce the storage footprint and accelerate both full-table scans and selective queries. We partition the Parquet dataset by date and station region to further improve read performance for common query patterns.
+
+  \item \textbf{Spark SQL}
+    Spark SQL provides a familiar SQL dialect for ad-hoc exploration and for expressing complex joins and window functions. We register our Parquet datasets as temporary views, enabling concise, declarative queries to compute historical trends (e.g., rolling averages of temperature) and to filter by metadata attributes such as station elevation.
+
+  \item \textbf{Matplotlib}
+    After extracting query results from Spark into Pandas DataFrames (for manageable result sizes), we employ Matplotlib to generate publication-quality visualizations. Line charts, histograms, and heatmaps illustrate temporal patterns, spatial distributions, and correlations in the meteorological parameters.
+\end{itemize}
