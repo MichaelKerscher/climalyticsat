@@ -1,17 +1,17 @@
 
 \subsubsection{Objective}
-This research question investigates whether long-term temperature trends differ by elevation. To illustrate the phenomenon of elevation-dependent warming, this section focuses specifically on the highest elevation category: \textbf{2000+\,m (High Alpine)}. These zones are climatically sensitive and relevant for alpine climate analysis.
+This research question investigates whether long-term temperature trends differ by elevation. To illustrate the phenomenon of elevation-dependent warming, this section focuses specifically on the highest elevation category: \textbf{2000+\,m (High Alpine)}.
 
 \subsubsection{Methodology}
-Using Apache Spark, monthly average temperature values (\texttt{tl\_mittel}) from the full dataset \texttt{climate\_all\_stations} were grouped by station and year. Elevation metadata was joined and used to classify each station into one of five predefined elevation bands.
-
-To ensure focus and clarity, this analysis considers only the High Alpine category. The reasoning is threefold:
-\begin{itemize}
-    \item It is directly linked to climate vulnerability and snow cover dynamics.
-    \item It exhibits strong and distinctive warming signals.
-    \item It includes representative stations from multiple federal states.
-\end{itemize}
-
+Using Apache Spark, monthly average temperature values (\texttt{tl\_mittel}) from the full dataset \texttt{climate\_all\_stations} were grouped by station and year. Elevation metadata was joined and used to classify each station into one of five predefined elevation bands:
+    \begin{itemize}
+      \item 0--499\,m (Lowland)
+      \item 500--999\,m (Upland)
+      \item 1000--1499\,m (Lower Alps)
+      \item 1500--1999\,m (Alpine)
+      \item 2000+\,m (High Alpine)
+    \end{itemize}
+    
 Two additional plots were generated for context:
 \begin{itemize}
     \item A distribution plot of all stations by elevation zone and region.
@@ -21,7 +21,15 @@ Two additional plots were generated for context:
 \subsubsection{Results and Interpretation}
 
 \paragraph{Figure~\ref{fig:temptrend_highalpine}: Temperature Trends in the High Alpine Zone}
-The line plot below shows annual average temperatures from 1970 to 2025 for each region in the High Alpine zone. A general increase is evident. While Tyrol and Vorarlberg exhibit consistent warming, Salzburg remains colder on average. Differences could be due to regional geography or data coverage.
+The line plot below shows annual average temperatures from 1970 to 2025 for each region in the High Alpine zone. A general increase is evident. The curves show irregularities, stagnation phases, and sudden drops—indicating either microclimatic variability or data limitations.
+
+In addition, abrupt changes and missing values are visible at several lines. These are most likely caused by:
+\begin{itemize}
+    \item sensor malfunctions,
+    \item missing or incomplete historical data,
+    \item or gaps due to station shutdowns.
+\end{itemize}
+These patterns emphasize the importance of pairing trend analysis with a careful check of data completeness.
 
 \begin{figure}[ht]
   \centering
@@ -30,7 +38,7 @@ The line plot below shows annual average temperatures from 1970 to 2025 for each
     \label{fig:temptrend_highalpine}
 \end{figure}
 
-\paragraph{Figure~\ref{fig:station_distribution_highalpine}: Altitude Distribution of High Alpine Stations}
+\paragraph{Figure~\ref{fig:station_distribution_highalpine}: Altitude Distribution of Weather Stations}
 This scatterplot validates that stations assigned to the High Alpine zone are located well above 2000+. The distribution also shows regional diversity, which supports cross-regional comparisons.
 
 \begin{figure}[ht]
@@ -41,7 +49,7 @@ This scatterplot validates that stations assigned to the High Alpine zone are lo
 \end{figure}
 
 \paragraph{Figure~\ref{fig:highest_stations_labeled}: Highest Stations per Region}
-This annotated plot confirms the locations and elevations of the highest weather stations per federal state. These are concentrated in Tyrol, Salzburg, and Carinthia—regions with substantial alpine terrain.
+This annotated graphic confirms the locations and altitudes of the weather stations in the two highest altitude zones per federal state.
 
 \begin{figure}[ht]
     \centering
@@ -51,6 +59,4 @@ This annotated plot confirms the locations and elevations of the highest weather
 \end{figure}
 
 \subsubsection{Conclusion}
-The High Alpine zone (2000+) in Austria shows a clear warming trend over the last five decades. Regional variation is present but does not detract from the overall pattern. By isolating a single elevation zone, this analysis enables focused insight while demonstrating elevation-dependent climate change.
-
-The Spark-based implementation, which joins climate records with station metadata and performs grouped aggregations by year, proves efficient for scalable trend analysis. This framework can easily be extended to other elevation bands or regions.
+The high alpine zone (2000+) in Austria shows a clear warming trend over the last five decades. Regional fluctuations are present, but do not affect the overall pattern. Exactly the same analysis was carried out for the four lower altitude zones; these analyses are included in the Jupyter Notebook.
