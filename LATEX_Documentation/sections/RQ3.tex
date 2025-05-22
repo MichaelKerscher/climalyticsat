@@ -7,19 +7,18 @@ To address this question, the implementation proceeded in two main steps:
 
 \begin{enumerate}
   \item \textbf{Metadata-Based Coverage Matrix:}  
-    Using station metadata (installation and deactivation dates), a year-by-year activity matrix was constructed from 1960 to 2025 using a cross join. Active periods were filtered, and each station was assigned to one of five elevation bands (same of RQ1).
-    Aggregated counts by year, elevation zone, and federal state provided a theoretical view of station coverage.
+    Using station metadata (installation and deactivation dates), a year-by-year activity matrix from 1970 to 2025 was constructed via a cross join with the full year range. Only periods when stations were active were retained. Each station was then categorized into one of five elevation zones (as in RQ1). Aggregated counts by year, elevation zone, and federal state were used to provide a theoretical view of station availability.
 
   \item \textbf{Real Measurement-Based Coverage:}  
-    To verify actual data presence, the climate dataset was filtered to include only records with at least one valid measurement. These were grouped using the same schema as the metadata-based approach.
+    To assess actual data availability, the climate dataset was filtered to include only records with at least one valid measurement. These were grouped using the same year–elevation–region schema as the metadata-based matrix.
 \end{enumerate}
 
-In this report, the results are shown for the Pre-Alps zone. The results for the other four zones can be found in the Jupyter Notebook.
+In this report, the results are shown for the Lower-Alps zone (1000–1499 m). Results for the other four zones are available in the accompanying Jupyter Notebook.
 
 \subsubsection{Results and Interpretation}
 
 \paragraph{Figure~\ref{fig:coverage_meta_loweralps}: Metadata-Based Coverage (Lower Alps)}  
-The heat map shows that Carinthia, Salzburg and Styria have maintained a consistent network of 7 to 16 active stations per year since the 1970s, while regions such as Lower Austria and Upper Austria are virtually absent or only sporadically represented in this altitude zone. While Vorarlberg is only moderately represented from 2008 onwards, only Tyrol has a good to very well-developed network over the entire period.
+The heat map shows that Carinthia, Salzburg, and Styria have maintained a consistent network of 7 to 16 active stations per year since the 1970s. In contrast, regions such as Lower Austria and Upper Austria are either absent or only sporadically represented in this altitude zone. Vorarlberg shows moderate coverage from around 2008 onward, while Tyrol stands out with a well-developed and continuous station network throughout the entire period.
 
 \begin{figure}[ht]
   \centering
@@ -29,7 +28,7 @@ The heat map shows that Carinthia, Salzburg and Styria have maintained a consist
 \end{figure}
 
 \paragraph{Figure~\ref{fig:coverage_real_loweralps}: Actual Measurement-Based Coverage (Lower Alps)}  
-The second heatmap confirms that actual measurement coverage aligns well with the metadata. Again, Tyrol is best represented, while several eastern federal states have minimal or no data-producing stations in this zone.
+The second heatmap confirms that actual measurement coverage aligns closely with the metadata. Again, Tyrol is best represented, while several eastern federal states exhibit minimal or no active data-producing stations in this elevation zone.
 
 \begin{figure}[ht]
   \centering
@@ -39,8 +38,8 @@ The second heatmap confirms that actual measurement coverage aligns well with th
 \end{figure}
 
 \subsubsection{Conclusion}
-Both the heat maps based on metadata and those based on actual measurements confirm consistent long-term detection gaps in the Lower Alps (1000-1499 m). This observation applies to several regions, especially in Upper and Lower Austria.
+Both the metadata-based and measurement-based heat maps confirm persistent long-term data gaps in the Lower Alps (1000–1499 m), particularly in Upper and Lower Austria.
 
-In the other altitude zones, too, the two representations of coverage agree well overall. However, there are slight differences in the shading (i.e. variations in the shades of blue) between the metadata and the measurement heat maps. These indicate periods in which the stations were technically active but provided little or incomplete data. A darker shade of blue in the measurement heatmaps compared to the same point in the metadata in turn indicates incorrect metadata or other data set errors.
+In other elevation zones as well, the two coverage representations generally agree. However, minor differences in shading between the two heat maps reveal important nuances: lighter shading in the measurement maps compared to metadata suggests technically active stations with little or incomplete data. Conversely, darker shading in the measurement maps may indicate incorrect metadata or other data quality issues.
 
-It is therefore very important to validate assumptions based on metadata with the actual measurement results, especially for high-resolution or policy-relevant studies.
+These findings underline the importance of validating metadata-based assumptions against actual measurement data—especially for high-resolution analyses or policy-relevant climate studies.
