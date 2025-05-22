@@ -1,7 +1,6 @@
 This section addresses the research question: \textit{Which seasonal windows and locations optimize safety—combining sunshine hours, wind-gust flags, and frost/heat indicators?}
 
-\subsubsection{Calculation Method}
-
+\subsubsection{Calculation Method}\leavevmode \\
 The safety score is a composite metric designed to evaluate environmental
 safety conditions for each weather station across Austria, using data from the
 last five years only. It combines the following variables:
@@ -13,24 +12,19 @@ last five years only. It combines the following variables:
     \item \textbf{Frequency of Heat Days}: Moderately penalized to reflect discomfort and potential risk.
 \end{itemize}
 
-The score is calculated as a weighted sum:
+\noindent The score is calculated as shown in equation~\ref{eqn:score}.
 
 \begin{equation}
     \text{Score} = \text{Sunshine} - \text{Wind Gust Freq} - \text{Frost Freq} - \text{Heat Freq}
+\label{eqn:score}
 \end{equation}
 
-A higher safety score indicates more favorable and stable environmental
-conditions. The score is then robustly normalized, clipped to a range, and
-scaled to 0–100 for comparability.
+\noindent A higher safety score indicates more favorable and stable environmental
+conditions. The score is then normalized and scaled to 0–100 for comparability.
 
-\subsubsection{Top Station Scores}
-
+\subsubsection{Top Station Scores}\leavevmode \\
 Number of stations used: 1134.
-
-Table~\ref{tab:top_scores} lists the top 10 station-season combinations ranked
-by safety score within the last five years. These stations span multiple
-Bundesländer and elevation zones, demonstrating consistently high safety
-scores.
+\noindent Table~\ref{tab:top_scores} lists the top 10 station-season combinations ranked by safety score within the last five years. These stations span multiple regions and elevation zones.
 
 \begin{table}[H]
     \centering
@@ -54,8 +48,7 @@ scores.
     \label{tab:top_scores}
 \end{table}
 
-\subsubsection{Visual Interpretation}
-
+\subsubsection{Visual Interpretation}\leavevmode \\
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.45\textwidth]{img/sunshine_by_season_zone.png}
@@ -63,21 +56,19 @@ scores.
     \label{fig:sunshine}
 \end{figure}
 
-Figure~\ref{fig:sunshine} shows the high alpine zone consistently records
-higher average sunshine hours across all seasons, especially in spring,
-contributing positively to their safety scores.
+\noindent Figure~\ref{fig:sunshine} shows the high alpine zone consistently records higher average sunshine hours across all seasons, especially in spring. This seems plausible because they are above the cloud cover.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.45\textwidth]{img/safety_score_boxplot.png}
-    \caption{Safety Score Distribution by Season and Bundesland (Last 5 Years)}
+    \caption{Safety Score Distribution by Season and Region (Last 5 Years)}
     \label{fig:safety_boxplot}
 \end{figure}
 
-Figure~\ref{fig:safety_boxplot} presents the distribution of safety scores
+\noindent Figure~\ref{fig:safety_boxplot} presents the distribution of safety scores
 filtered to recent years. Salzburg, Tirol, and Vorarlberg show the highest
 spread and highest values in winter and spring, corresponding to high-elevation
-stations.
+stations.\\
 
 \begin{figure}[H]
     \centering
@@ -86,7 +77,7 @@ stations.
     \label{fig:station_map}
 \end{figure}
 
-Figure~\ref{fig:station_map} visualizes the spatial distribution of safety
+\noindent Figure~\ref{fig:station_map} visualizes the spatial distribution of safety
 scores over the last five years. Green points indicate stations with relatively
 high safety scores, predominantly in Alpine regions. Red points represent
-stations with lower scores, more frequent in lower elevation areas.
+stations with lower scores, more frequent in lower elevation areas.\\
